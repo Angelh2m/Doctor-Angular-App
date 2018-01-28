@@ -1,0 +1,15 @@
+button{
+  float: right !important;
+  }
+
+  .login-element{
+    padding-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .login-home{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }

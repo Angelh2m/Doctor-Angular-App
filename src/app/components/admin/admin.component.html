@@ -1,0 +1,58 @@
+
+
+
+<div class="admin">
+  <div class="container">
+
+    <app-login> </app-login>
+
+    <br>
+
+    <ng-template #registered>
+      <!-- <h3>No rigths</h3> -->
+    </ng-template>
+
+    <div *ngIf='auth.user$ | async as user; else registered'>
+
+      <div *ngIf="isAdmin === 'angeloh2m@gmail.com'" >
+
+        <h2>Lista de pacientes </h2>
+        <div *ngIf="patientsList?.length > 0; else noItems ">
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>E-mail</th>
+                    <th>Mensaje</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor='let patient of patientsList' >
+                  <tr (dblclick)='deleteItem($event, patient)' >
+                      <td> {{patient.name}} </td>
+                      <td> {{patient.lastName}} </td>
+                      <td> {{patient.phone}} </td>
+                      <td> {{patient.email}} </td>
+                      <td> {{patient.message}} </td>
+                  </tr>
+                </tbody>
+              </table>
+
+          </div>
+
+          <ng-template #noItems>
+            No hay pacientes
+          </ng-template>
+
+
+            <div>
+              <!-- <app-form></app-form> -->
+            </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

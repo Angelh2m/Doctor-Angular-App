@@ -1,0 +1,22 @@
+
+<div>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]='zoom'>
+
+    <agm-marker [latitude]="lat" [longitude]="lng"
+    [iconUrl]="icon"
+    >
+
+          <agm-info-window maxWidth='350' isOpen='true'>
+            <div class="row" style="align-items: center; margin-bottom: 0rem;">
+              <div class="col-4">
+                <img style="width: 100%;" src="../../assets/img/doctor.jpg" alt="">
+              </div>
+              <div class="col-8">
+                <h6> Consultorio Medico </h6>
+                <i>Juan Manuel González Ureña #321 Interior: 6 Nueva Chapultepec 58280 Morelia, Michoacán, Mexico.</i>
+              </div>
+            </div>
+          </agm-info-window>
+      </agm-marker>
+  </agm-map>
+</div>

@@ -1,0 +1,15 @@
+
+
+.admin{
+  color: white;
+  background-color: #303b4a;
+  height: 800px;
+}
+
+form *{
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: color 0 ease-in;
+  transition: none !important;
+}
+

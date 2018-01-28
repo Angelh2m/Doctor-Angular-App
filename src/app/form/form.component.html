@@ -1,0 +1,121 @@
+
+<form
+[formGroup]='form' (ngSubmit)='saveChanges()'
+ class="col-lg-8 offset-lg-2">
+    <div class="row">
+      <div
+        class="col" >
+        <input
+        [(ngModel)]='item.name'
+        name="name"
+        [ngClass]="{'is-invalid': !form.get('name').valid && !form.get('name').pristine, 'is-valid': form.get('name').valid}"
+        type="text" class="form-control" formControlName='name'  placeholder="Nombre">
+
+        <div class="invalid-feedback">
+          <span class="invalid"></span>
+        </div>
+
+        <div class="valid-feedback">
+            <span class="valid"></span>
+        </div>
+
+      </div>
+      <div class="col">
+        <input
+        [(ngModel)]='item.lastName'
+        name="lastName"
+        [ngClass]="{'is-invalid': !form.get('lastName').valid && !form.get('lastName').pristine, 'is-valid': form.get('lastName').valid}"
+        type="text" class="form-control" formControlName='lastName' placeholder="Apellido">
+
+        <!-- <div class="invalid-feedback">
+            Escribe tus apellidos
+        </div> -->
+
+          <div class="invalid-feedback">
+            <span class="invalid"></span>
+          </div>
+
+          <div class="valid-feedback">
+              <span class="valid"></span>
+          </div>
+
+      </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col">
+          <input
+          [(ngModel)]='item.phone'
+          name="phone"
+          [ngClass]="{'is-invalid': !form.get('phone').valid && !form.get('phone').pristine, 'is-valid': form.get('phone').valid}"
+          type="text" class="form-control" formControlName='phone' placeholder="Telefono">
+
+          <div class="invalid-feedback">
+              <span class="invalid"></span>
+          </div>
+
+          <div class="valid-feedback">
+              <span class="valid"></span>
+          </div>
+
+        </div>
+        <div class="col">
+          <input
+          [(ngModel)]='item.email'
+          name="email"
+          [ngClass]="{'is-invalid': !form.get('email').valid && !form.get('email').pristine, 'is-valid': form.get('email').valid}"
+          type="email" class="form-control"
+          formControlName='email' placeholder="Correo electronico">
+
+          <div class="invalid-feedback">
+              <span class="invalid"></span>
+          </div>
+
+          <div class="valid-feedback">
+              <span class="valid"></span>
+          </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Mensaje</label>
+        <textarea
+        [(ngModel)]='item.message'
+        name="message"
+        [ngClass]="{'is-invalid': !form.get('message').valid && !form.get('message').pristine, 'is-valid': form.get('message').valid}"
+        class="form-control" formControlName='message' id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div *ngIf='!sentMessage'>
+      <button
+      class='btn btn-outline-success '
+      type='submit'>
+        Enviar
+      </button>
+    </div>
+    <div *ngIf='warningMessage.active == true' class="custom-alert">
+      <span> {{ warningMessage.message }} </span>
+    </div>
+    <div *ngIf='sentMessage'  class="custom-success">
+        <span> Gracias, tu mensaje a sido enviado. </span>
+        <i>!Estaremos en contacto pronto!</i>
+    </div>
+    <!-- <h3 *ngIf='sentMessage' > Tu mensaje a sido enviado!</h3> -->
+
+
+  </form>
+
+
+  <!-- [disabled]='!form.valid' -->
+<!-- {{form.valid}} -->
+
+<!-- <div *ngIf='items?.length > 0; else noitems'>
+    <ul *ngFor='let item of items'>
+      <li> {{ item.name }} </li>
+    </ul>
+</div>
+
+<ng-template #noitems>
+  <span>No items available</span>
+</ng-template> -->
